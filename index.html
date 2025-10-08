@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enron Email Explorer</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <style>
+        .search-card {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .dataset-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="min-h-screen" id="vanta-bg">
+    <div class="container mx-auto px-4 py-12">
+        <!-- Header -->
+        <header class="text-center mb-16">
+            <h1 class="text-5xl font-bold text-gray-900 mb-4">Enron Email Explorer</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Discover and analyze the famous Enron email dataset used by researchers worldwide</p>
+        </header>
+
+        <!-- Search Section -->
+        <div class="max-w-3xl mx-auto mb-20">
+            <div class="search-card rounded-xl p-8 shadow-lg">
+                <div class="flex items-center mb-6">
+                    <i data-feather="search" class="text-gray-500 mr-3"></i>
+                    <h2 class="text-2xl font-semibold text-gray-800">Find Enron Dataset Sources</h2>
+                </div>
+                <div class="relative">
+                    <input type="text" placeholder="Search for dataset versions, formats or sources..." 
+                           class="w-full px-6 py-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg">
+                    <button class="absolute right-2 top-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dataset Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Card 1 -->
+            <div class="dataset-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                <img src="http://static.photos/technology/640x360/1" alt="Dataset" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i data-feather="database" class="text-blue-500 mr-2"></i>
+                        <span class="text-sm font-medium text-gray-500">Primary Source</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Original Enron Dataset</h3>
+                    <p class="text-gray-600 mb-4">The complete collection of 500,000+ emails from 150 employees</p>
+                    <a href="https://www.cs.cmu.edu/~./enron/" class="text-blue-600 font-medium hover:underline flex items-center">
+                        Download <i data-feather="arrow-right" class="ml-1" style="width: 16px; height: 16px;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="dataset-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                <img src="http://static.photos/office/640x360/2" alt="Dataset" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i data-feather="package" class="text-green-500 mr-2"></i>
+                        <span class="text-sm font-medium text-gray-500">Processed Data</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Cleaned CSV Version</h3>
+                    <p class="text-gray-600 mb-4">Pre-processed dataset with normalized metadata and attachments</p>
+                    <a href="https://www.kaggle.com/wcukierski/enron-email-dataset" class="text-blue-600 font-medium hover:underline flex items-center">
+                        Download <i data-feather="arrow-right" class="ml-1" style="width: 16px; height: 16px;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="dataset-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                <img src="http://static.photos/abstract/640x360/3" alt="Dataset" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i data-feather="cloud" class="text-purple-500 mr-2"></i>
+                        <span class="text-sm font-medium text-gray-500">API Access</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Enron REST API</h3>
+                    <p class="text-gray-600 mb-4">Query the dataset programmatically with modern endpoints</p>
+                    <a href="https://github.com/SheetJS/enron_xls" class="text-blue-600 font-medium hover:underline flex items-center">
+                        Access API <i data-feather="arrow-right" class="ml-1" style="width: 16px; height: 16px;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="bg-gray-50 rounded-xl p-8 mb-16">
+            <div class="flex flex-col md:flex-row items-start">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">About the Enron Dataset</h2>
+                    <p class="text-gray-600 mb-4">
+                        The Enron corpus is a massive database of over 500,000 emails generated by 158 employees of the Enron Corporation.
+                        It became public during the legal investigation and has since become a valuable resource for research in fields like:
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Natural Language Processing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Social Network Analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Fraud Detection Research</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Organizational Behavior Studies</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
+                        <i data-feather="alert-circle" class="text-yellow-500 mr-2"></i>
+                        Dataset Characteristics
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">Complete Messages</span>
+                                <span class="text-sm font-medium text-gray-700">100%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">Headers Metadata</span>
+                                <span class="text-sm font-medium text-gray-700">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-green-500 h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">Attachments</span>
+                                <span class="text-sm font-medium text-gray-700">60%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-500 h-2.5 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-600">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://github.com/Kirui-Brian/enron_access" class="hover:text-blue-600"><i data-feather="github"></i></a>
+                <a href="https://x.com/KiruiBriann" class="hover:text-blue-600"><i data-feather="twitter"></i></a>
+                <a href="#" class="hover:text-blue-600"><i data-feather="book-open"></i></a>
+            </div>
+            <p>© 2025 Enron Email Access. All dataset sources belong to their respective providers.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize Vanta.js background
+        VANTA.WAVES({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3b82f6,
+            shininess: 35.00,
+            waveHeight: 15.00,
+            waveSpeed: 0.50,
+            zoom: 0.8
+        });
+    </script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
